@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Свойства width и height задают размеры блока */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,19 +18,17 @@ body {
 
 
 /*Container*/
-
 .container {
   width: 100%;
-  min-width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;   
 }
 
 /*Intro*/
-
 .intro {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: column; /* Главная ось располагается вертикально и направлена сверху вниз. */
+  justify-content: center; /* Флексы выравниваются по центру строки. */
 
   width: 100%;
   height: 100vh;
@@ -40,8 +38,38 @@ body {
   background-size: cover;
 }
 
-/*Header*/
+.intro__inner {
+  width: 100%;
+  max-width: 802px;
+  margin: 0 auto;
+  text-align: center;
+}
 
+.intro__suptitle {
+  font-size: 72px;
+  color: #fff;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.intro__title {
+  font-size: 150px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 140px;
+  color: #fff;
+}
+
+.intro__title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 60px auto ;
+
+  background-color: #fff;
+}
+
+/*Header*/
 .header {
   width: 100%;
   padding-top: 40px;
@@ -61,12 +89,11 @@ body {
 
 .header__inner {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Флексы равномерно распределяются по всей строке. */
+  align-items: center; /* Флексы выравниваются по линии поперечной оси. */
 }
 
 /* Nav */
-
 .nav {
   font-size: 14px;
   text-transform: uppercase;
@@ -81,7 +108,7 @@ body {
   color: #fff;
   text-decoration: none;
 
-  transition: color .1s linear;
+  transition: color .2s linear;
 }
 
 .nav__link::after {
@@ -96,20 +123,90 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-
   z-index: 1;
-  transition: opacity .1s linear;
+
+  transition: opacity .2s linear;
 }
 
 .nav__link:hover {
   color: #fce38a;
 }
 
-.nav__link:hover {
-  color: #fce38a;
-}
-
-.nav__link:hover:after,
-.nav__link.active:after {
+.nav__link:hover:after {
   opacity: 1;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: 15px 32px;
+  margin-bottom: 157px;
+  
+
+  border: 3px solid #fff;
+  
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: background .1s linear, color .1s linear;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #333;
+
+}
+
+/* Slider */
+.slider {
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.slider__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider__item {
+  width: 24%;
+  padding: 20px 0;
+  position: relative;
+  
+  border-top: 3px solid #fff;
+  opacity: .7;
+
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.slider__item:hover:before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+
+  background-color: #f38181;
+
+  position: absolute;
+  top: -3px;
+  left: 0;
+  z-index: 1;
+}
+
+.slider__item:hover {
+  opacity: 1;
+}
+.slider__num {
+  font-size: 24px;
+  font-weight: 700;
 }
