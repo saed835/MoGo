@@ -304,3 +304,39 @@ body {
   transform: translate3d(0, -50%, 0);
   transition: opacity .2s linear;
 }
+
+/* Statistics */
+.statistics {
+  background-color: #95e1d3;
+}
+
+.start {
+  display: flex;
+}
+
+.start__item {
+  flex: 1 1 0;
+  padding: 70px 25px;
+
+  border-left: 1px solid #b5eae0;
+
+  text-align: center;
+  color: #fff;
+}
+
+.start__item:last-child {
+  border-right: 1px solid #b5eae0;
+}
+
+.start__count {
+  margin-bottom: 10px;
+
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.start__text {
+  font-style: 14px;
+  text-transform: uppercase;
+}
