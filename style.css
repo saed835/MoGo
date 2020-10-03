@@ -227,6 +227,7 @@ body {
 }
 
 .section--devices {
+  margin-bottom: 40px;
   padding-bottom: 0px;
   
   background: url(Images/Unique/desing-bg.jpg) center no-repeat;
@@ -268,6 +269,7 @@ body {
 .section__text {
   font-size: 15px;
   color: #999;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* About */
@@ -408,4 +410,70 @@ body {
   bottom: -80px;
   right: 0;
   z-index: 1;
+}
+
+.wedo {
+  display: flex;
+}
+
+.wedo__item {
+  width: 50%;
+}
+
+/* Accordion */
+.accordion__item {
+  border: 1px solid #e5e5e5;
+}
+
+.accordion__header {
+  padding: 15px 20px 15px 60px;
+  position: relative;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion__header::after {
+  content: "";
+  margin-top: 5px;
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  z-index: 1;
+
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.accordion__icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  z-index: 1;
+
+  transform: translateY(-50%); 
+}
+
+.accordion__content {
+  height: 180px;
+  padding: 15px 20px;
+
+  font-size: 15px;
+  color: #999;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+
+  overflow-y: auto;
+}
+
+.accordion__title {
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
 }
