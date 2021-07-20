@@ -232,6 +232,12 @@ body {
   background-color: #f8f8f8;
 }
 
+.section--clients {
+  background: #f8f8f8 url(Images/Intro/rectangle.png) center no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+}
+
 .section--devices {
   margin-bottom: 40px;
   padding-bottom: 0px;
@@ -568,12 +574,13 @@ body {
 }
 
 .reviews__item {
-  padding-left: 205px;
+  padding-left: 255px;
   position: relative;
 }
 
 .reviews__photo {
   position: absolute;
+  
   top: 0;
   left: 0;
   z-index: 1;
@@ -670,3 +677,132 @@ body {
 .logos__item {
   margin: auto;
 }
+
+/* Works */
+.works {
+  display: flex;
+}
+
+.works__col {
+  flex: 1 1 0;
+}
+
+.works__item {
+  position: relative;
+
+  background: linear-gradient(to bottom, #f38181, #fce38a);
+}
+
+.works__item:hover .works__image {
+  opacity: .1;
+}
+
+.works__item:hover .works__info {
+  opacity: 1;
+}
+
+.works__image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  transition: opacity .2s linear;
+}
+
+.works__info {
+  width: 100%;
+  padding: 0 15px;
+
+  
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+
+  transform: translate3d(0, -50%, 0);
+  transition: opacity .2s linear;
+}
+
+.works__title {
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.works__text {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+
+  font-weight: 300;
+  font-style: italic;
+  line-height: 24px;
+}
+
+/* Clients */
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+}
+
+.clients__item {
+  width: 50%;
+  padding: 0 45px 0 175px;
+  margin-bottom: 60px;
+
+  position: relative;
+}
+
+.clients__photo {
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+
+  position: absolute;
+  top: 0;
+  left: 40px;
+  z-index: 1;
+
+}
+
+.clients__name {
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.clients__prof {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.clients__text {
+  font-size: 15px;
+  color: #999;
+
+}
+
+.clients__text:before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 15px 0;
+
+  background-color: #f38181;
+}
+
+
