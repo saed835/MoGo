@@ -50,8 +50,9 @@ body {
   z-index: 1000;
 }
 
-.header--fixed {
+.header.fixed {
   padding: 10px 0;
+  
   background-color: #eb8b8d;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -59,13 +60,17 @@ body {
   right: 0;
   left: 0;
   transform: translate3d(0,0,0);
+}
 
+.header.active {
+  background-color:#eb8b8d;
 }
 
 .header__logo {
   font-size: 30px;
   font-weight: 700;
   color: #fff;
+  cursor: pointer;
 }
 
 .header__inner {
@@ -92,11 +97,19 @@ body {
   transition: color .2s linear;
 }
 
+
 .nav__link:hover {
   color: #fce38a;
 }
 
+.nav__link.active {
+  color: #fce38a;
+}
+
 .nav__link:hover:after {
+  opacity: 1;
+}
+.nav__link:hover:after, .nav__link.active:after {
   opacity: 1;
 }
 
@@ -149,7 +162,24 @@ body {
   bottom: 0;
   left: 0;
   margin: auto;
+
+  transition: background .2s linear;
 }
+
+.nav-toggle.active .nav-toggle__item {
+  background: none;
+}
+
+.nav-toggle.active .nav-toggle__item::before {
+  transform-origin: left top;
+  transform: rotate(45deg) translateX(-3px)
+}
+
+.nav-toggle.active .nav-toggle__item::after {
+  transform-origin: left bottom;
+  transform: rotate(-45deg) translateX(-3px);
+}
+
 .nav-toggle__item::before,
 .nav-toggle__item::after {
   content: "";
@@ -159,6 +189,7 @@ body {
   position: absolute;
   left: 0;
   z-index: 1;
+  transition: transform .2s linear;
 }
 .nav-toggle__item::before {
   top: -8px;
@@ -1388,14 +1419,29 @@ body {
 
   /* Header */
   .header {
-    padding-top: 10px;
+    padding: 10px 0;
   }
   
   /* Nav */
   .nav {
+    width: 100%;
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #eb8b8d;
   }
-  .nav-toggle__item {
+  .nav.active {
+    display: block;
+  }
+
+  .nav__link {
+    display: block;
+    margin: 0;
+    padding: 8px 20px;
+  }
+  
+  .nav-toggle {
     display: block;
   }
 
