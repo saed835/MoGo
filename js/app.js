@@ -32,6 +32,7 @@ $(function() {
         blockOffset = $(blockId).offset().top;
     
     $("#nav a").removeClass("active");
+    $("#nav_toggle").removeClass("active");
     $this.addClass("active");
 
     $("html, body").animate({
