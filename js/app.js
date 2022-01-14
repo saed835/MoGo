@@ -31,9 +31,9 @@ $(function() {
         blockId = $this.data('scroll'),
         blockOffset = $(blockId).offset().top;
     
-    $("#nav a").removeClass("active");
+    $("#nav").removeClass("active");
     $("#nav_toggle").removeClass("active");
-    $this.addClass("active");
+    $this.toggleClass('active').siblings().removeClass('active');
 
     $("html, body").animate({
       scrollTop: blockOffset
